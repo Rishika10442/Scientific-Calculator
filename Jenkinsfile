@@ -35,7 +35,7 @@ pipeline {
                                                   subject: "Jenkins Test Email",
                                                   body: "This is a test email from Jenkins pipeline.",
                                                   to: "Rishika.Gupta@iiitb.ac.in",
-                                                  from: "10442rishika@gmail.com,
+                                                  from: "10442rishika@gmail.com",
                                                   mimeType: 'text/plain',
                                                   attachLog: true,
                                                   recipientProviders: [[$class: 'DevelopersRecipientProvider']],
