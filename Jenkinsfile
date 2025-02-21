@@ -31,9 +31,9 @@ pipeline {
           stage('Send Test Email') {
                     steps {
                         script {
-                            emailext subject: "Jenkins Test Email",
+                            emailext (subject: "Jenkins Test Email",
                                      body: "This is a test email from Jenkins pipeline.",
-                                     to: "Rishika.Gupta@iiitb.ac.in"
+                                     to: "Rishika.Gupta@iiitb.ac.in")
                         }
                     }
                 }
