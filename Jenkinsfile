@@ -47,17 +47,17 @@ pipeline {
    post {
        success {
            echo 'Build and tests passed successfully!'
-           emailext
-                    subject: "Build SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                    body: "Good news! The build passed successfully. Check Jenkins for details.",
-                    to: "Rishika.Gupta@iiitb.ac.in"
+//            emailext
+//                     subject: "Build SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+//                     body: "Good news! The build passed successfully. Check Jenkins for details.",
+//                     to: "Rishika.Gupta@iiitb.ac.in"
        }
        failure {
            echo 'Build or tests failed!'
-           emailext
-                    subject: "Build FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                    body: "Oops! The build failed. Check the logs for details.",
-                    to: "Rishika.Gupta@iiitb.ac.in"
+//            emailext
+//                     subject: "Build FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+//                     body: "Oops! The build failed. Check the logs for details.",
+//                     to: "Rishika.Gupta@iiitb.ac.in"
        }
    }
 
