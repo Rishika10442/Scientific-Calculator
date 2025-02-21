@@ -54,10 +54,9 @@ pipeline {
    post {
        success {
            echo 'Build and tests passed successfully!'
-//            emailext
-//                     subject: "Build SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-//                     body: "Good news! The build passed successfully. Check Jenkins for details.",
-//                     to: "Rishika.Gupta@iiitb.ac.in"
+            mail to: 'Rishika.Gupta@iiitb.ac.in',
+            subject:'truial',
+            body:'buid'
        }
        failure {
            echo 'Build or tests failed!'
