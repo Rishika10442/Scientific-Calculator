@@ -28,7 +28,15 @@ pipeline {
                 }
             }
         }
-
+          stage('Send Test Email') {
+                    steps {
+                        script {
+                            emailext subject: "Jenkins Test Email",
+                                     body: "This is a test email from Jenkins pipeline.",
+                                     to: "Rishika.Gupta@iiitb.ac.in"
+                        }
+                    }
+                }
         stage('Deploy') {
             steps {
                 echo 'Deployment step here (e.g., Copy JAR, run app, or use Ansible)'
@@ -39,14 +47,14 @@ pipeline {
    post {
        success {
            echo 'Build and tests passed successfully!'
-           emailext debug: true,
+           emailext
                     subject: "Build SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                     body: "Good news! The build passed successfully. Check Jenkins for details.",
                     to: "Rishika.Gupta@iiitb.ac.in"
        }
        failure {
            echo 'Build or tests failed!'
-           emailext debug: true,
+           emailext
                     subject: "Build FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                     body: "Oops! The build failed. Check the logs for details.",
                     to: "Rishika.Gupta@iiitb.ac.in"
