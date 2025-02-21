@@ -18,16 +18,16 @@ pipeline {
             }
         }
 
-//         stage('Test') {
-//             steps {
-//                 sh 'mvn test'
-//             }
-//             post {
-//                 always {
-//                     junit 'target/surefire-reports/*.xml'  // Captures test results
-//                 }
-//             }
-//         }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'  // Captures test results
+                }
+            }
+        }
 
         stage('Deploy') {
             steps {
