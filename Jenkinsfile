@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Rishika10442/Scientific-Calculator.git'
+                git branch: 'main', url: 'https://github.com/Rishika10442/Scientific-Calculator.git'
             }
         }
 
