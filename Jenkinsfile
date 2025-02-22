@@ -58,7 +58,7 @@ pipeline {
                                                     playbook: 'deploy.yml',
                                                     inventory: 'inventory.ini'
                                                  )
-                        }
+                        //}
                     }
                 }
 
