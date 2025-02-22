@@ -54,10 +54,6 @@ pipeline {
                             sh '''
                             ansible-playbook -i inventory.ini deploy.yml --extra-vars "ansible_user=$ANSIBLE_USER ansible_ssh_pass=$ANSIBLE_PASS"
                             '''
-//                              ansiblePlaybook(
-//                                                     playbook: 'deploy.yml',
-//                                                     inventory: 'inventory.ini'
-//                                                  )
                         }
                     }
                 }
@@ -86,5 +82,5 @@ pipeline {
        }
    }
 
-//see
+
 }
