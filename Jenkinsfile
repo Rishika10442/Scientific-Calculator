@@ -50,15 +50,15 @@ pipeline {
                 }
          stage('Run Ansible Playbook') {
                     steps {
-//                         withCredentials([usernamePassword(credentialsId: 'local-user-credentials', usernameVariable: 'ANSIBLE_USER', passwordVariable: 'ANSIBLE_PASS')]) {
-//                             sh '''
-//                             ansible-playbook -i inventory.ini deploy.yml --extra-vars "ansible_user=$ANSIBLE_USER ansible_ssh_pass=$ANSIBLE_PASS"
-//                             '''
-                             ansiblePlaybook(
-                                                    playbook: 'deploy.yml',
-                                                    inventory: 'inventory.ini'
-                                                 )
-                        //}
+                        withCredentials([usernamePassword(credentialsId: 'local-user-credentials', usernameVariable: 'ANSIBLE_USER', passwordVariable: 'ANSIBLE_PASS')]) {
+                            sh '''
+                            ansible-playbook -i inventory.ini deploy.yml --extra-vars "ansible_user=$ANSIBLE_USER ansible_ssh_pass=$ANSIBLE_PASS"
+                            '''
+//                              ansiblePlaybook(
+//                                                     playbook: 'deploy.yml',
+//                                                     inventory: 'inventory.ini'
+//                                                  )
+                        }
                     }
                 }
 
