@@ -13,14 +13,14 @@ public class App {
             System.out.println("2. Factorial (x!)");
             System.out.println("3. Natural Log (ln x)");
             System.out.println("4. Power (x^b)");
-            System.out.println("5. Exit");
+            System.out.println("5. Exit the program");
             System.out.print("Choose an option: ");
 
             int choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter number: ");
+                    System.out.print("Enter number:  ");
                     double num1 = scanner.nextDouble();
                     System.out.println("√" + num1 + " = " + calculator.squareRoot(num1));
                     break;
